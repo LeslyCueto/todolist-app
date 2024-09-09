@@ -7,7 +7,9 @@ const Contenedor = ({ tareas, eliminarTarea, actualizarTarea }) => {
       <ul>
         <h2 className="text-primary text-center">Tareas</h2>
         {tareas.length === 0 ? (
-          <div className=" text-danger text-center ms-2 me-auto fw-bold">No hay tareas que mostrar</div>
+          <div className=" text-danger text-center ms-2 me-auto fw-bold">
+            No hay tareas que mostrar
+          </div>
         ) : (
           tareas.map((item) => (
             <Cards

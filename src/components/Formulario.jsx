@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-const Formulario = ({agregarTarea}) => {
+const Formulario = ({ agregarTarea }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [state, setState] = useState("pendiente");
@@ -28,7 +28,7 @@ const Formulario = ({agregarTarea}) => {
       id: Date.now(),
       title: title,
       description: description,
-      state: state === 'completado' ? true :false,
+      state: state === "completado" ? true : false,
       priority: priority,
     };
     //agregar tarea al arreglo []
