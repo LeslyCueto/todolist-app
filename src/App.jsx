@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Contenedor from "./components/Contenedor";
 import Formulario from "./components/Formulario";
 
-const tareasIniciales = [];
+const tareasIniciales = localStorage.getItem("tareasGuardadas")
+  ? JSON.parse(localStorage.getItem("tareasGuardadas"))
+  : [];
 
 const App = () => {
   const [tareas, setTareas] = useState(tareasIniciales);
 
+  useEffect(() => {
+    localStorage.setItem("tareasGuardadas", JSON.stringify(tareas));
+  }, [tareas]);
   //agregar tarea
   const agregarTarea = (nuevaTarea) => {
     setTareas([...tareas, nuevaTarea]);
